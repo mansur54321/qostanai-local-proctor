@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src data:; connect-src 'none'; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Локальный прокторинг | Qostanai</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#exam">К тесту</a>
+  <header class="page-header">
+    <div><p class="eyebrow">КРУ и Qostanai Hub · Кейс 3</p><h1>Локальный прокторинг</h1><p class="muted">Экзамен и проверяемые сигналы компьютерного зрения на одном компьютере.</p></div>
+    <div class="session"><span id="phase">Сервер запускается</span><strong id="elapsed">00:00</strong><button id="exit" class="quiet">Закрыть приложение</button></div>
+  </header>
+  <div id="notice" class="notice" role="status" aria-live="polite">Подключение к локальному серверу. Камера выключена.</div>
+  <main class="workspace">
+    <section class="exam-column" id="exam" aria-labelledby="exam-heading">
+      <div class="section-title"><h2 id="exam-heading">Подготовка и тест</h2><span id="exam-state">Еще не начат</span></div>
+      <div class="preparation" id="preparation">
+        <p>До начала преподаватель проверяет камеру, калибровку и доступность защиты клавиш. Видеокадры не сохраняются. Журнал событий остается локально.</p>
+        <div class="camera-controls"><label for="camera">Индекс камеры</label><input id="camera" type="number" min="0" max="8" value="0"><button id="start-camera" class="primary">Включить наблюдение</button><button id="calibrate" disabled>Калибровать взгляд</button></div>
+        <p id="calibration-help" class="muted">После включения смотрите в центр экрана и нажмите «Калибровать взгляд». Требуются 5 кадров с одним лицом.</p>
+        <label class="pin-label" for="teacher-pin">PIN преподавателя для завершения экзамена</label>
+        <input id="teacher-pin" type="password" inputmode="numeric" autocomplete="new-password" minlength="6" maxlength="12" placeholder="От 6 до 12 цифр">
+        <button id="start-exam" class="primary" disabled>Начать защищенный экзамен</button>
+        <p class="muted">При недоступном перехвате клавиш экзамен не начнется. Просмотр CV останется доступен.</p>
+      </div>
+      <form id="question-form"><fieldset id="questions" disabled><legend class="sr-only">Вопросы демонстрационного теста</legend><p class="empty">Загрузка вопросов с локального сервера.</p></fieldset><button id="submit" class="primary" disabled>Отправить ответы</button></form>
+      <div id="result" class="result" hidden aria-live="polite"></div>
+      <div class="exam-actions"><button id="finish" disabled>Завершить и снять защиту</button><button id="stop-camera" disabled>Остановить наблюдение</button></div>
+      <p class="safety">Аварийный выход: <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd>. Снимает ограничения и останавливает наблюдение. Это страховка демонстрационного прототипа.</p>
+      <section class="journal-section" aria-labelledby="journal-heading"><div class="section-title"><h2 id="journal-heading">Журнал для проверки</h2><span id="event-count">0 событий</span></div><p class="muted">Сигнал требует разбора преподавателем. Программа не выносит вердикт о нарушении.</p><ol id="journal" class="journal"><li class="empty">Сессия не начата. События появятся после включения наблюдения.</li></ol></section>
+    </section>
+    <aside class="monitor-column" aria-labelledby="monitor-heading">
+      <div class="section-title"><h2 id="monitor-heading">Наблюдение</h2><span id="source">Камера выключена</span></div>
+      <div class="frame-box"><img id="frame" alt="Кадр с выделенными телефонами и лицами" hidden><p id="frame-empty">Камера включается только вашей кнопкой.<br>До этого кадры не обрабатываются.</p></div>
+      <dl class="telemetry"><div><dt>Кадры / с</dt><dd id="fps">Нет данных</dd></div><div><dt>Возраст кадра</dt><dd id="frame-age">Нет данных</dd></div><div><dt>Лиц в кадре</dt><dd id="face-count">Нет данных</dd></div><div><dt>Уверенность телефона</dt><dd id="phone-confidence">Нет детекций</dd></div><div><dt>Калибровка</dt><dd id="calibration">Не выполнена</dd></div><div><dt>Время CV</dt><dd id="cv-time">Нет данных</dd></div></dl>
+      <h3>Текущие сигналы</h3><ul id="signals" class="signals"><li class="empty">Ожидание кадров.</li></ul>
+      <section class="guard-section"><h3>Защита среды</h3><p id="guard-state">Выключена</p><p id="guard-detail" class="muted">Ожидание проверки возможностей ОС.</p><p class="muted">Одно локальное окно. Дополнительные вкладки, переходы и контекстное меню закрыты. Ограничения ОС включаются отдельно при начале экзамена.</p></section>
+      <details><summary>Границы проверки</summary><p>Телефон обнаруживает YOLOv8n по классу cell phone. MediaPipe оценивает лица, положение головы и относительное смещение радужки после калибровки. Поднятый телефон отмечается по геометрии, а факт съемки и направление его камеры автоматически не устанавливаются.</p><p>Влево и вправо указаны в координатах незеркального кадра. Смещение радужки является эвристикой и не определяет точку взгляда на экране.</p><p>Перехват клавиш и возврат фокуса уменьшают возможность переключения. Это не полная изоляция ОС: системный экран безопасности, внешние устройства и привилегированные приложения требуют отдельного контроля.</p></details>
+    </aside>
+  </main>
+  <dialog id="pin-dialog"><form method="dialog" id="pin-form"><h2>Действие преподавателя</h2><p id="pin-action">Введите PIN для снятия защиты.</p><label for="finish-pin">PIN преподавателя</label><input id="finish-pin" type="password" inputmode="numeric" autocomplete="off" maxlength="12"><p id="pin-error" class="error" role="alert"></p><div class="dialog-actions"><button value="cancel" id="pin-cancel">Отмена</button><button type="button" class="primary" id="pin-confirm">Подтвердить</button></div></form></dialog>
+</body>
+</html>

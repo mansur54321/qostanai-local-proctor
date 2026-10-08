@@ -1,0 +1,27 @@
+{
+  "metadata_source": "https://s3.amazonaws.com/images.cocodataset.org/annotations/annotations_trainval2014.zip",
+  "image": {
+    "license": 4,
+    "file_name": "COCO_val2014_000000158122.jpg",
+    "coco_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000158122.jpg",
+    "height": 640,
+    "width": 639,
+    "date_captured": "2013-11-24 05:47:51",
+    "flickr_url": "http://farm4.staticflickr.com/3084/5737158163_446bd40d02_z.jpg",
+    "id": 158122
+  },
+  "license": {
+    "url": "http://creativecommons.org/licenses/by/2.0/",
+    "id": 4,
+    "name": "Attribution License"
+  },
+  "download_url": "https://s3.amazonaws.com/images.cocodataset.org/val2014/COCO_val2014_000000158122.jpg",
+  "creator": "TomiTapio",
+  "retrieved": "2026-10-08",
+  "file_sha256": "d45ed6c4d8f89dd413187aa882fb50cea5108aea5e20296019a6fea75ea02ab8",
+  "title": "A slight difference (phones)",
+  "creator_url": "https://www.flickr.com/photos/tomitapio/",
+  "photo_page": "https://www.flickr.com/photos/tomitapio/5737158163/",
+  "oembed_relay_url": "https://noembed.com/embed?url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Ftomitapio%2F5737158163%2F",
+  "oembed_source_note": "Flickr metadata returned via public Noembed relay. Direct official Flickr page and oEmbed timed out from this host. License matches original official COCO metadata."
+}

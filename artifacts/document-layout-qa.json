@@ -1,0 +1,150 @@
+{
+  "technical-report": [
+    {
+      "page": 1,
+      "bodyBottom": 887.796875,
+      "footerTop": 1058,
+      "gap": 170.203125,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 2,
+      "bodyBottom": 953.71875,
+      "footerTop": 1058,
+      "gap": 104.28125,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 3,
+      "bodyBottom": 985.484375,
+      "footerTop": 1058,
+      "gap": 72.515625,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 4,
+      "bodyBottom": 1033.203125,
+      "footerTop": 1058,
+      "gap": 24.796875,
+      "overflow": false,
+      "images": [],
+      "links": [
+        "https://github.com/mansur54321/qostanai-local-proctor",
+        "https://docs.ultralytics.com/datasets/detect/coco/",
+        "https://developers.google.com/edge/mediapipe/solutions/vision/face_landmarker/python",
+        "https://www.electronjs.org/docs/latest/api/global-shortcut",
+        "https://www.ultralytics.com/license"
+      ]
+    }
+  ],
+  "presentation": [
+    {
+      "page": 1,
+      "bodyBottom": 466.625,
+      "footerTop": 624.640625,
+      "gap": 158.015625,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 2,
+      "bodyBottom": 553.34375,
+      "footerTop": 624.640625,
+      "gap": 71.296875,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 3,
+      "bodyBottom": 612.796875,
+      "footerTop": 624.640625,
+      "gap": 11.84375,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "width": 1340,
+          "height": 930
+        }
+      ],
+      "links": []
+    },
+    {
+      "page": 4,
+      "bodyBottom": 519.109375,
+      "footerTop": 624.640625,
+      "gap": 105.53125,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 5,
+      "bodyBottom": 562.609375,
+      "footerTop": 624.640625,
+      "gap": 62.03125,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 6,
+      "bodyBottom": 557.0625,
+      "footerTop": 624.640625,
+      "gap": 67.578125,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 7,
+      "bodyBottom": 586.859375,
+      "footerTop": 624.640625,
+      "gap": 37.78125,
+      "overflow": false,
+      "images": [],
+      "links": []
+    },
+    {
+      "page": 8,
+      "bodyBottom": 531.359375,
+      "footerTop": 624.640625,
+      "gap": 93.28125,
+      "overflow": false,
+      "images": [],
+      "links": [
+        "https://github.com/mansur54321/qostanai-local-proctor"
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "name": "ink",
+      "ratio": 12.794493620567406
+    },
+    {
+      "name": "muted",
+      "ratio": 5.5568593331058995
+    },
+    {
+      "name": "primary",
+      "ratio": 6.762536185557993
+    },
+    {
+      "name": "danger",
+      "ratio": 6.360970492936983
+    },
+    {
+      "name": "disabled",
+      "ratio": 5.25000007570986
+    }
+  ]
+}

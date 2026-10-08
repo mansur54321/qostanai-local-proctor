@@ -1,0 +1,125 @@
+{
+  "test": "actual_CV_inference_artificial_video",
+  "passed": true,
+  "frames": 150,
+  "video_seconds": 30,
+  "camera_opened": false,
+  "network_connect_blocked_before_cv_imports": true,
+  "source_sha256": {
+    "proctor_cv.py": "eba232d82868a56e16cc56d64048a45c0d5d0fd80a180ae258c9ab5e3b025933",
+    "bootstrap_models.py": "c6699304135713e717613eb252d98b8d8e5d48f55a83d1c565a2d967ee42e19b",
+    "smoke_cv.py": "f71cf919bec9009b0c5078ea5bfce799795d94f42596dbd24af084fb529351f8"
+  },
+  "calibrated": true,
+  "events": [
+    {
+      "type": "phone_present",
+      "started_at": 10.0,
+      "duration_s": 2.0
+    },
+    {
+      "type": "phone_raised",
+      "started_at": 10.0,
+      "duration_s": 2.0
+    },
+    {
+      "type": "second_face",
+      "started_at": 18.0,
+      "duration_s": 2.0
+    },
+    {
+      "type": "face_absent",
+      "started_at": 24.0,
+      "duration_s": 2.0
+    }
+  ],
+  "phases": {
+    "one_face": {
+      "face_count": 1,
+      "phones": [],
+      "signals": {
+        "face_absent": false,
+        "second_face": false,
+        "phone_present": false,
+        "phone_raised": false,
+        "gaze_down": false,
+        "gaze_left": false,
+        "gaze_right": false,
+        "head_down": false,
+        "head_left": false,
+        "head_right": false
+      }
+    },
+    "phone_raised": {
+      "face_count": 1,
+      "phones": [
+        {
+          "box": [
+            511,
+            23,
+            639,
+            254
+          ],
+          "confidence": 0.8309
+        },
+        {
+          "box": [
+            414,
+            35,
+            499,
+            226
+          ],
+          "confidence": 0.8148
+        }
+      ],
+      "signals": {
+        "face_absent": false,
+        "second_face": false,
+        "phone_present": true,
+        "phone_raised": true,
+        "gaze_down": false,
+        "gaze_left": false,
+        "gaze_right": false,
+        "head_down": false,
+        "head_left": false,
+        "head_right": false
+      }
+    },
+    "two_faces": {
+      "face_count": 2,
+      "phones": [],
+      "signals": {
+        "face_absent": false,
+        "second_face": true,
+        "phone_present": false,
+        "phone_raised": false,
+        "gaze_down": false,
+        "gaze_left": false,
+        "gaze_right": false,
+        "head_down": false,
+        "head_left": false,
+        "head_right": false
+      }
+    },
+    "empty": {
+      "face_count": 0,
+      "phones": [],
+      "signals": {
+        "face_absent": true,
+        "second_face": false,
+        "phone_present": false,
+        "phone_raised": false,
+        "gaze_down": false,
+        "gaze_left": false,
+        "gaze_right": false,
+        "head_down": false,
+        "head_left": false,
+        "head_right": false
+      }
+    }
+  },
+  "inference_ms_median_after_first": 119.9,
+  "inference_ms_min": 54.8,
+  "inference_ms_max": 733.4,
+  "scope": "Constructed static source images validate execution and persistence. No webcam accuracy benchmark."
+}

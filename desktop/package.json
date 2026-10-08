@@ -1,0 +1,14 @@
+{
+  "name": "qostanai-local-proctor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local exam viewer and explicitly activated kiosk guards",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "electron": "44.7.0"
+  }
+}

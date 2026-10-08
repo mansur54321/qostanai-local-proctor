@@ -1,0 +1,184 @@
+{
+  "test": "real_local_model_static_fixture_smoke",
+  "passed": true,
+  "camera_opened": false,
+  "training_performed": false,
+  "network_connect_blocked_before_cv_imports": true,
+  "source_sha256": {
+    "proctor_cv.py": "eba232d82868a56e16cc56d64048a45c0d5d0fd80a180ae258c9ab5e3b025933",
+    "bootstrap_models.py": "c6699304135713e717613eb252d98b8d8e5d48f55a83d1c565a2d967ee42e19b",
+    "smoke_cv.py": "f71cf919bec9009b0c5078ea5bfce799795d94f42596dbd24af084fb529351f8"
+  },
+  "calibration_completed": true,
+  "results": [
+    {
+      "fixture": "face.jpg",
+      "phones": [],
+      "faces": [
+        {
+          "box": [
+            239,
+            79,
+            390,
+            271
+          ],
+          "head": {
+            "pitch_deg": 5.06,
+            "yaw_deg": 1.63,
+            "roll_deg": 0.74
+          },
+          "gaze": {
+            "horizontal": 0.5111,
+            "vertical": 0.4912
+          },
+          "landmark_count": 478
+        }
+      ],
+      "face_count": 1,
+      "signals": {
+        "face_absent": false,
+        "second_face": false,
+        "phone_present": false,
+        "phone_raised": false,
+        "gaze_down": false,
+        "gaze_left": false,
+        "gaze_right": false,
+        "head_down": false,
+        "head_left": false,
+        "head_right": false
+      },
+      "events": [],
+      "timestamp_s": 0.0,
+      "calibrated": false,
+      "calibration_samples": 0,
+      "inference_ms": 296.2,
+      "limitations": "Gaze/head are calibrated estimates in the unmirrored camera frame. Raised phone is a heuristic; camera aim and photography are not proven."
+    },
+    {
+      "fixture": "phone.jpg",
+      "phones": [
+        {
+          "box": [
+            30,
+            23,
+            270,
+            552
+          ],
+          "confidence": 0.9293
+        }
+      ],
+      "faces": [],
+      "face_count": 0,
+      "signals": {
+        "face_absent": true,
+        "second_face": false,
+        "phone_present": true,
+        "phone_raised": false,
+        "gaze_down": false,
+        "gaze_left": false,
+        "gaze_right": false,
+        "head_down": false,
+        "head_left": false,
+        "head_right": false
+      },
+      "events": [],
+      "timestamp_s": 1.0,
+      "calibrated": false,
+      "calibration_samples": 0,
+      "inference_ms": 109.8,
+      "limitations": "Gaze/head are calibrated estimates in the unmirrored camera frame. Raised phone is a heuristic; camera aim and photography are not proven."
+    },
+    {
+      "fixture": "two_faces.jpg",
+      "phones": [],
+      "faces": [
+        {
+          "box": [
+            239,
+            79,
+            389,
+            271
+          ],
+          "head": {
+            "pitch_deg": 4.67,
+            "yaw_deg": 8.59,
+            "roll_deg": -0.6
+          },
+          "gaze": {
+            "horizontal": 0.4904,
+            "vertical": 0.4991
+          },
+          "landmark_count": 478
+        },
+        {
+          "box": [
+            880,
+            80,
+            1029,
+            270
+          ],
+          "head": {
+            "pitch_deg": 4.03,
+            "yaw_deg": -4.25,
+            "roll_deg": 2.06
+          },
+          "gaze": {
+            "horizontal": 0.5039,
+            "vertical": 0.4937
+          },
+          "landmark_count": 478
+        }
+      ],
+      "face_count": 2,
+      "signals": {
+        "face_absent": false,
+        "second_face": true,
+        "phone_present": false,
+        "phone_raised": false,
+        "gaze_down": false,
+        "gaze_left": false,
+        "gaze_right": false,
+        "head_down": false,
+        "head_left": false,
+        "head_right": false
+      },
+      "events": [],
+      "timestamp_s": 2.0,
+      "calibrated": false,
+      "calibration_samples": 0,
+      "inference_ms": 66.5,
+      "limitations": "Gaze/head are calibrated estimates in the unmirrored camera frame. Raised phone is a heuristic; camera aim and photography are not proven."
+    },
+    {
+      "fixture": "generated_black_frame",
+      "phones": [],
+      "faces": [],
+      "face_count": 0,
+      "signals": {
+        "face_absent": true,
+        "second_face": false,
+        "phone_present": false,
+        "phone_raised": false,
+        "gaze_down": false,
+        "gaze_left": false,
+        "gaze_right": false,
+        "head_down": false,
+        "head_left": false,
+        "head_right": false
+      },
+      "events": [
+        {
+          "type": "face_absent",
+          "started_at": 8.0,
+          "duration_s": 2.0
+        }
+      ],
+      "timestamp_s": 10.0,
+      "calibrated": true,
+      "calibration_samples": 5,
+      "inference_ms": 101.8,
+      "limitations": "Gaze/head are calibrated estimates in the unmirrored camera frame. Raised phone is a heuristic; camera aim and photography are not proven."
+    }
+  ],
+  "scope": "Static samples establish runnable inference, not accuracy on exam webcams."
+}
